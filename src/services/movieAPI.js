@@ -19,7 +19,7 @@ export async function fetchMovieDetails(id) {
   const response = await axios.get(
     `/movie/${id}?api_key=${API_KEY}&language=en-US?`
   );
-  return response;
+  return response.data;
 }
 
 export async function getFilmReviews(id) {
