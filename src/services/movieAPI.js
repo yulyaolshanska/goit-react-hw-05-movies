@@ -10,7 +10,7 @@ export async function fetchTrandingFilms() {
 
 export async function fetchSearchingFilms(searchQuery) {
   const response = await axios.get(
-    `/search/movie?api_key=${API_KEY}&query=${searchQuery}&language=en-US?`
+    `/search/movie?api_key=${API_KEY}&query=${searchQuery}&page=1&language=en-US?`
   );
   return response.data.results;
 }
