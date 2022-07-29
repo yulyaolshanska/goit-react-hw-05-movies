@@ -1,0 +1,10 @@
+.container {
+  margin: 0 auto;
+  padding: 15px;
+  width: 1100px;
+}
+
+.link {
+  font-weight: 700;
+  border-bottom: 1px solid gray;
+}
