@@ -1,3 +1,5 @@
+import styles from './MovieInfo.module.css';
+
 export const MovieInfo = ({
   poster,
 
@@ -14,10 +16,10 @@ export const MovieInfo = ({
   // const joinGenres = genres.map(({ name }) => name);
   return (
     <>
-      <div>
+      <div className={styles.movieBox}>
         <img src={poster} alt={title} width={'300px'}></img>
 
-        <div>
+        <div className={styles.movieInfo}>
           <h1>{title}</h1>
           <p>User Score:{score}%</p>
           <h2>Overview</h2>
