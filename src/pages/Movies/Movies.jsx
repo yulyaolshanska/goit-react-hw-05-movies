@@ -5,7 +5,7 @@ import * as movieAPI from 'services/movieAPI';
 import { useSearchParams } from 'react-router-dom';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 
-export const Movies = () => {
+const Movies = () => {
   // const [query, setQuery] = useState('');
   const [inputhQuery, setInputhQuery] = useState('');
   const [searchMovies, setSearchMovies] = useState([]);
@@ -66,3 +66,5 @@ export const Movies = () => {
     </>
   );
 };
+
+export default Movies;

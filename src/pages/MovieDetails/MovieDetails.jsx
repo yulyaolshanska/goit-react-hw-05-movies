@@ -1,10 +1,11 @@
 import { GoBackButton } from 'components/GoBackBtn/GoBackBtn';
+import { Loader } from 'components/Loader/Loader';
 import { MovieInfo } from 'components/MovieInfo/MovieInfo';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, Suspense } from 'react';
 import { NavLink, Outlet, useLocation, useParams } from 'react-router-dom';
 import * as movieAPI from 'services/movieAPI';
 
-export const MovieDetails = () => {
+const MovieDetails = () => {
   const [movie, setMovie] = useState({});
   const { movieId } = useParams();
   // const location = useLocation();
@@ -44,7 +45,11 @@ export const MovieDetails = () => {
       <h4>Addititonal information</h4>
       <NavLink to="cast">Cast</NavLink>
       <NavLink to="reviews">Reviews</NavLink>
-      <Outlet />
+      <Suspense fallback={<Loader />}>
+        <Outlet />
+      </Suspense>
     </>
   );
 };
+
+export default MovieDetails;

@@ -23,7 +23,7 @@ export const MovieInfo = ({
           <h2>Overview</h2>
           <p>{overview}</p>
           <h3>Genres</h3>
-          {genres && <p>{genres.map(({ name }) => name).join(', ')}</p>}
+          {genres && <p>{genres.map(({ name }) => name).join(', ')}.</p>}
         </div>
       </div>
     </>
