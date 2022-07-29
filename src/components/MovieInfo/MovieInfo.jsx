@@ -1,14 +1,28 @@
 import styles from './MovieInfo.module.css';
 import PropTypes from 'prop-types';
 
-export const MovieInfo = ({ poster, score, title, overview, genres }) => {
+export const MovieInfo = ({
+  poster,
+  score,
+  title,
+  overview,
+  genres,
+  releaseDate,
+}) => {
   return (
     <>
       <div className={styles.movieBox}>
         <img src={poster} alt={title} width={'300px'}></img>
 
         <div className={styles.movieInfo}>
-          <h1>{title}</h1>
+          <h1>
+            {title}
+            {releaseDate && (
+              <span className={styles.releaseDate}>
+                ({releaseDate.substring(0, 4)})
+              </span>
+            )}
+          </h1>
           <p>User Score:{score}%</p>
           <h2>Overview</h2>
           <p>{overview}</p>
@@ -26,4 +40,5 @@ MovieInfo.propTypes = {
   overview: PropTypes.string,
   title: PropTypes.string,
   genres: PropTypes.array,
+  releaseDate: PropTypes.string,
 };

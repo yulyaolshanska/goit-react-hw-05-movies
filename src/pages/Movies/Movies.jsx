@@ -6,12 +6,10 @@ import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import styles from './Movies.module.css';
 
 const Movies = () => {
-  // const [query, setQuery] = useState('');
   const [inputhQuery, setInputhQuery] = useState('');
   const [searchMovies, setSearchMovies] = useState([]);
   const [searchParams, setSearchParams] = useSearchParams();
   const query = searchParams.get('query');
-  // console.log('query', query);
   useEffect(() => {
     if (query === '') {
       return;
@@ -26,8 +24,6 @@ const Movies = () => {
   // const getFormData = data => {
   //   setQuery(data);
   // };
-
-  ///
 
   const handleSubmit = e => {
     e.preventDefault();

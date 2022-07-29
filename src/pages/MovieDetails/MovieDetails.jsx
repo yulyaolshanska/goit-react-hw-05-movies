@@ -27,6 +27,7 @@ const MovieDetails = () => {
       })
       .catch(console.log());
   }, [movieId]);
+
   return (
     <div className={styles.movieInfoContainer}>
       <GoBackButton backLinkHref={backLinkHref} />
@@ -37,6 +38,7 @@ const MovieDetails = () => {
         overview={movie.overview}
         score={voteAverage}
         genres={movie.genres}
+        releaseDate={movie.release_date}
       />
       <h4>Addititonal information</h4>
       <NavLink
