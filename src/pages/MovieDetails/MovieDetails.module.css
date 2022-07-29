@@ -1,0 +1,18 @@
+.link {
+  padding: 10px;
+  text-decoration: none;
+  font-weight: 600;
+  color: black;
+}
+
+.activeLink {
+  color: rgb(81 81 240);
+  font-weight: 700;
+  padding: 10px;
+  text-decoration: none;
+}
+
+.movieInfoContainer {
+  margin: 0 auto;
+  max-width: 1200px;
+}

@@ -4,6 +4,7 @@ import { MovieInfo } from 'components/MovieInfo/MovieInfo';
 import { useState, useEffect, Suspense } from 'react';
 import { NavLink, Outlet, useLocation, useParams } from 'react-router-dom';
 import * as movieAPI from 'services/movieAPI';
+import styles from './MovieDetails.module.css';
 
 const MovieDetails = () => {
   const [movie, setMovie] = useState({});
@@ -32,7 +33,7 @@ const MovieDetails = () => {
 
   // console.log(movie);
   return (
-    <>
+    <div className={styles.movieInfoContainer}>
       <GoBackButton backLinkHref={backLinkHref} />
       <MovieInfo
         poster={imgUrl}
@@ -43,12 +44,28 @@ const MovieDetails = () => {
         genres={movie.genres}
       />
       <h4>Addititonal information</h4>
-      <NavLink to="cast">Cast</NavLink>
-      <NavLink to="reviews">Reviews</NavLink>
+      <NavLink
+        // className={styles.link}
+        to="cast"
+        className={({ isActive }) =>
+          isActive ? styles.activeLink : styles.link
+        }
+      >
+        Cast
+      </NavLink>
+      <NavLink
+        // className={styles.link}
+        to="reviews"
+        className={({ isActive }) =>
+          isActive ? styles.activeLink : styles.link
+        }
+      >
+        Reviews
+      </NavLink>
       <Suspense fallback={<Loader />}>
         <Outlet />
       </Suspense>
-    </>
+    </div>
   );
 };
 
