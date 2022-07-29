@@ -1,19 +1,7 @@
 import styles from './MovieInfo.module.css';
+import PropTypes from 'prop-types';
 
-export const MovieInfo = ({
-  poster,
-
-  score,
-  title,
-  overview,
-  genres,
-}) => {
-  // console.log('movies', movies);
-  // const { title, overview, genres } = movies;
-
-  // console.log('genres', genres);
-
-  // const joinGenres = genres.map(({ name }) => name);
+export const MovieInfo = ({ poster, score, title, overview, genres }) => {
   return (
     <>
       <div className={styles.movieBox}>
@@ -30,4 +18,12 @@ export const MovieInfo = ({
       </div>
     </>
   );
+};
+
+MovieInfo.propTypes = {
+  poster: PropTypes.string.isRequired,
+  score: PropTypes.number.isRequired,
+  overview: PropTypes.string,
+  title: PropTypes.string,
+  genres: PropTypes.array,
 };
