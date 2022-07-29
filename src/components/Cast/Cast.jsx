@@ -26,16 +26,17 @@ const Cast = () => {
   }, [movieId]);
 
   return (
-    <>
+    <div className={styles.castBox}>
       {cast.length > 0 ? (
         <ul className={styles.castList}>
           {cast.slice(0, 15).map(item => {
             return (
-              <li key={item.id}>
+              <li key={item.id} className={styles.castItem}>
                 <img
                   width={'100px '}
                   src={getImgUrl(item.profile_path)}
                   alt={item.name}
+                  className={styles.castImg}
                 />
                 <p>{item.name}</p>
                 <p>{item.character}</p>
@@ -46,7 +47,7 @@ const Cast = () => {
       ) : (
         <p>We don't have any cast for this movie</p>
       )}
-    </>
+    </div>
   );
 };
 

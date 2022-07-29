@@ -1,4 +1,18 @@
+.castBox {
+  padding: 15px;
+}
+
 .castList {
-  display: flex;
+  /* display: flex; */
   flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+}
+
+.castItem {
+  margin-right: 15px;
+}
+
+.castImg {
+  min-height: 150px;
 }
