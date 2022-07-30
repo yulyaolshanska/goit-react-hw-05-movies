@@ -43,6 +43,7 @@ const MovieDetails = () => {
       <h4>Addititonal information</h4>
       <NavLink
         to="cast"
+        state={{ from: backLinkHref }}
         className={({ isActive }) =>
           isActive ? styles.activeLink : styles.link
         }
@@ -51,6 +52,7 @@ const MovieDetails = () => {
       </NavLink>
       <NavLink
         to="reviews"
+        state={{ from: backLinkHref }}
         className={({ isActive }) =>
           isActive ? styles.activeLink : styles.link
         }
