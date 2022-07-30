@@ -7,7 +7,7 @@ import styles from './Movies.module.css';
 
 const Movies = () => {
   const [searchParams, setSearchParams] = useSearchParams();
-  const query = searchParams.get('query');
+  const query = searchParams.get('query') ?? '';
   const [inputhQuery, setInputhQuery] = useState(query);
   const [searchMovies, setSearchMovies] = useState([]);
   useEffect(() => {
