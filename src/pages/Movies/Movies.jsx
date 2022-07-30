@@ -58,7 +58,7 @@ const Movies = () => {
       </form>
       {/* <SearchForm onSubmit={getFormData} /> */}
       {searchMovies.length > 0 && query && <MovieList movies={searchMovies} />}
-      {inputhQuery !== '' && searchMovies.length === 0 && (
+      {inputhQuery !== '' && searchMovies.length === 0 && query && (
         <p>
           Sorry, there are no movies matching your search query. Please try
           again.
