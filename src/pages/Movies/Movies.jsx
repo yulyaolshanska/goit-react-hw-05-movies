@@ -1,15 +1,20 @@
 import { MovieList } from 'components/MovieList/MovieList';
 import { useState, useEffect } from 'react';
 import * as movieAPI from 'services/movieAPI';
-import { useSearchParams } from 'react-router-dom';
+import { useLocation, useSearchParams } from 'react-router-dom';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import styles from './Movies.module.css';
+import queryStr from 'query-string';
 
 const Movies = () => {
   const [searchParams, setSearchParams] = useSearchParams();
-  const query = searchParams.get('query') ?? '';
+  console.log('searchParams', searchParams);
+  const { search } = useLocation();
+  const { query } = queryStr.parse(search) ?? ''; // через библиотеку query-string
+  // const query = searchParams.get('query') ?? ''; // через useSearchParams
   const [inputhQuery, setInputhQuery] = useState(query);
   const [searchMovies, setSearchMovies] = useState([]);
+
   useEffect(() => {
     if (query === '') {
       return;
@@ -32,8 +37,6 @@ const Movies = () => {
       return;
     }
     setSearchParams({ query: inputhQuery });
-
-    // onSubmit(searchQuery);
   };
 
   const handleChange = e => {
