@@ -4,12 +4,24 @@ import { Loader } from './Loader/Loader';
 // import Addititonal from 'pages/Addititonal/Addititonal';
 
 const Layout = lazy(() => import('./Layout/Layout'));
-const Movies = lazy(() => import('../pages/Movies/Movies'));
-const Home = lazy(() => import('pages/Home/Home'));
-const MovieDetails = lazy(() => import('pages/MovieDetails/MovieDetails'));
-const Cast = lazy(() => import('./Cast/Cast'));
-const Reviews = lazy(() => import('./Reviews/Reviews'));
-const NotFound = lazy(() => import('./NotFound/NotFound'));
+const Movies = lazy(() =>
+  import('../pages/Movies/Movies' /*webpackChunkName: "Movies" */)
+);
+const Home = lazy(() =>
+  import('pages/Home/Home' /*webpackChunkName: "Home" */)
+);
+const MovieDetails = lazy(() =>
+  import(
+    'pages/MovieDetails/MovieDetails' /*webpackChunkName: "MovieDetails" */
+  )
+);
+const Cast = lazy(() => import('./Cast/Cast' /*webpackChunkName: "Cast" */));
+const Reviews = lazy(() =>
+  import('./Reviews/Reviews' /*webpackChunkName: "Reviews" */)
+);
+const NotFound = lazy(() =>
+  import('./NotFound/NotFound' /*webpackChunkName: "NotFound" */)
+);
 
 export const App = () => {
   return (
