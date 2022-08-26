@@ -7,8 +7,7 @@ import styles from './Movies.module.css';
 import queryStr from 'query-string';
 
 const Movies = () => {
-  const [searchParams, setSearchParams] = useSearchParams();
-  console.log('searchParams', searchParams);
+  const [setSearchParams] = useSearchParams();
   const { search } = useLocation();
   const { query } = queryStr.parse(search) ?? ''; // через библиотеку query-string
   // const query = searchParams.get('query') ?? ''; // через useSearchParams
