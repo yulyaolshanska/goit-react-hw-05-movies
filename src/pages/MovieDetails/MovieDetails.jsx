@@ -2,13 +2,20 @@ import { GoBackButton } from 'components/GoBackBtn/GoBackBtn';
 import { Loader } from 'components/Loader/Loader';
 import { MovieInfo } from 'components/MovieInfo/MovieInfo';
 import { useState, useEffect, Suspense } from 'react';
-import { NavLink, Outlet, useLocation, useParams } from 'react-router-dom';
+import {
+  NavLink,
+  Outlet,
+  useLocation,
+  // useNavigate,
+  useParams,
+} from 'react-router-dom';
 import * as movieAPI from 'services/movieAPI';
 import styles from './MovieDetails.module.css';
 
 const MovieDetails = () => {
   const [movie, setMovie] = useState({});
   const { movieId } = useParams();
+  // const navigate = useNavigate();
   const location = useLocation();
   const backLinkHref = location.state?.from ?? '/';
 
@@ -18,11 +25,14 @@ const MovieDetails = () => {
 
   const voteAverage = Math.round(movie.vote_average * 10);
 
+  // const handleGoBackBtn = () => {
+  //   navigate(`${backLinkHref}`);
+  // };
+
   useEffect(() => {
     movieAPI
       .fetchMovieDetails(movieId)
       .then(data => {
-        // console.log('data', data);
         setMovie(data);
       })
       .catch(console.log());
