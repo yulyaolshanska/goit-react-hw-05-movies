@@ -1,6 +1,21 @@
 .movieItem {
   margin-bottom: 10px;
+  margin-right: 20px;
+  width: calc((100% - 70px) / 3);
+  border: 1px solid #eeeeee;
 }
+.movieItem:hover {
+  box-shadow: 0px 1px 1px rgb(0 0 0 / 12%), 0px 4px 4px rgb(0 0 0 / 6%),
+    1px 4px 6px rgb(0 0 0 / 16%);
+}
+
+/* .movieItem:not(:nth-child(3n)) {
+  margin-right: 30px;
+} */
 .link {
   text-decoration: none;
+}
+.movieInfo {
+  padding: 10px;
+  /* flex-grow: 1; */
 }
